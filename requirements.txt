@@ -1,5 +1,7 @@
 streamlit
 langchain
-ollama
-chromadb
+langchain-core
 langchain-community
+langchain-ollama
+chromadb
+ollama

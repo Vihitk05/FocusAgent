@@ -25,8 +25,8 @@ Built with:
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/focusagent.git
-cd focusagent
+git https://github.com/Vihitk05/FocusAgent.git
+cd FocusAgent
 ```
 
 ### 2. Install Ollama
@@ -109,6 +109,37 @@ Agent Suggests:
 - 11AM–12PM: Emails (light)
 - 2PM–3PM: Design prep
 ```
+
+## 🐳 Docker Deployment
+
+### 1. Start Ollama (if not already running)
+Make sure Ollama is running on your host machine:
+```bash
+ollama serve
+```
+If you see `bind: address already in use`, Ollama is already running. You can check this using:
+```bash
+lsof -i :11434
+```
+
+### 2. Build the Docker Image
+```bash
+docker build -t focusagent .
+```
+
+### 3. Run the Container
+```bash
+docker run -p 8501:8501 \
+  -e OLLAMA_HOST=host.docker.internal \
+  -v "$(pwd)/data":/app/data \
+  focusagent
+```
+> `host.docker.internal` lets the container access the Ollama server on your Mac host.
+
+### 4. Open in Browser
+Go to: [http://localhost:8501](http://localhost:8501)
+
+✅ The container will persist feedback data using the shared `./data` volume.
 
 ---
 
