@@ -4,7 +4,7 @@ FocusAgent is an offline, privacy-first AI agent that learns how you work and he
 
 Built with:
 - 🧱 LangChain + Ollama (`mistral` by default)
-- 🧠 ChromaDB-style memory (simple JSON log)
+- 🧠 ChromaDB
 - 🖥️ Streamlit frontend
 - 🐍 Python backend
 
